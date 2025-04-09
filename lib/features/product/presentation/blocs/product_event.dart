@@ -26,11 +26,10 @@ class SearchProductsEvent extends ProductEvent {
 }
 
 class SortProductsEvent extends ProductEvent {
-  final String sortBy; // "price", "title"
-  final String order;  // "asc", "desc"
+  final String sortBy;
+  final String order;
 
   const SortProductsEvent({required this.sortBy, required this.order});
-
   @override
   List<Object?> get props => [sortBy, order];
 }

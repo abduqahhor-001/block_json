@@ -1,3 +1,5 @@
+import '../../domain/entities/product_entity.dart';
+
 class ProductModel {
   final int id;
   final String title;
@@ -32,6 +34,17 @@ class ProductModel {
       category: json['category'] ?? 'Unknown',
       brand: json['brand'] ?? 'Unknown',
       images: (json['images'] as List?)?.map((e) => e.toString()).toList() ?? [],
+    );
+  }
+
+  ProductEntity toEntity() {
+    return ProductEntity(
+      id: id,
+      title: title,
+      description: description,
+      price: price,
+      thumbnail: thumbnail,
+      category: category,
     );
   }
 }

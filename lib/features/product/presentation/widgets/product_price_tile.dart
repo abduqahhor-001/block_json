@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ProductPriceTile extends StatelessWidget {
   final double price;
 
-  const ProductPriceTile({super.key, required this.price});
+  const ProductPriceTile({super.key, required this.price, required bool isLoading});
 
   @override
   Widget build(BuildContext context) {

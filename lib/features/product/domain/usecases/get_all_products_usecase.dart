@@ -7,14 +7,7 @@ class GetAllProductsUseCase {
   GetAllProductsUseCase(this.dataSource);
 
   Future<List<ProductEntity>> call() async {
-    final products = await dataSource.getAllProducts();
-    return products.map((model) =>
-        ProductEntity(
-          id: model.id,
-          title: model.title,
-          description: model.description,
-          price: model.price,
-          thumbnail: model.thumbnail, category: '',
-        )).toList();
+    final models = await dataSource.getAllProducts();
+    return models.map((model) => model.toEntity()).toList();
   }
-  }
+}
